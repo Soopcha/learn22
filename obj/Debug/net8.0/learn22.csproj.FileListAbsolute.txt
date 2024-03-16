@@ -1,0 +1,15 @@
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.GeneratedMSBuildEditorConfig.editorconfig
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.AssemblyInfoInputs.cache
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.AssemblyInfo.cs
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.csproj.CoreCompileInputs.cache
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.sourcelink.json
+C:\study\university\programming\c#\learn\learn22\bin\Debug\net8.0\learn22.exe
+C:\study\university\programming\c#\learn\learn22\bin\Debug\net8.0\learn22.deps.json
+C:\study\university\programming\c#\learn\learn22\bin\Debug\net8.0\learn22.runtimeconfig.json
+C:\study\university\programming\c#\learn\learn22\bin\Debug\net8.0\learn22.dll
+C:\study\university\programming\c#\learn\learn22\bin\Debug\net8.0\learn22.pdb
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.dll
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\refint\learn22.dll
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.pdb
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\learn22.genruntimeconfig.cache
+C:\study\university\programming\c#\learn\learn22\obj\Debug\net8.0\ref\learn22.dll
