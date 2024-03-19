@@ -20,6 +20,12 @@ namespace project
             base.printValues();
         }
 
-    
+        public override void printValues()
+        {
+            base.printValues(); //изночально выполнен метод из род класса
+            System.Console.WriteLine("health"+ this.Health);
+        }
+
+
     }
 }

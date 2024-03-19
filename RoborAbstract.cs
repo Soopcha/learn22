@@ -3,10 +3,9 @@ using System.Runtime.InteropServices.Marshalling;
 
 namespace project
 {
-    class Robot
+    abstract class RobotAbstract  //абстрактный класс - как интерфейс
     {
 
-        //private protected - внтри классов наследников тоже public модификаторы  доступа
         private string name;
         private int weight;
         private byte[] coordinates;
@@ -16,11 +15,11 @@ namespace project
         protected string surname;
 
 
-        //кострукторов сколько угодно
+        
         public Robot()
         {
             System.Console.WriteLine("Object has been created");
-        } // конструктор по умолчанию
+        } 
 
         public Robot(string name_, int weight_, byte[] coordinates_)
         {
@@ -28,16 +27,14 @@ namespace project
             this.setValues(name_, weight_, coordinates_);
         }
 
-        public void setValues(string name_, int weight_, byte[] coordinates_)
+        public void setValues(string name, int weight, byte[] coordinates)
         {
-            // this.name = name;
-            // this.weight = weight;
-            // this.coordinates = coordinates;  - так лучше
-            name = name_;
-            weight = weight_;
-            coordinates = coordinates_;
+            this.name = name;
+            this.weight = weight;
+            this.coordinates = coordinates;
+            
         }
-        public virtual void printValues() //virtual - виртуальный метод, те можем переписать функционал в наследнике
+        public virtual void printValues()
         {
             System.Console.WriteLine(name + "  " + weight + "  ");
             foreach (byte el in coordinates)
@@ -72,8 +69,6 @@ namespace project
         public int Width {get; set; }
         // public int Width { private get; set; }
 
-
-// Аксессоры «get» и «set»
         public string Name
         {
             get
