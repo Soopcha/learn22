@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices.Marshalling;
 namespace project
 {
-    class Bot : RobotAbstract
+    class Bot : RobotAbstract 
     {
 
         public Bot()
@@ -15,5 +15,11 @@ namespace project
         {
         }
 
+        public override void printValues()
+        {
+            System.Console.WriteLine(this.Name+ " weight "+ this.Weight + " Coordinates ");
+            foreach(byte el in this.Coordinates)
+            System.Console.WriteLine(el);
+        }
     }
 }

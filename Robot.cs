@@ -37,6 +37,13 @@ namespace project
             weight = weight_;
             coordinates = coordinates_;
         }
+
+        public void setValues(string name, int weight)//перегрузку метода сделали
+        {
+            this.name = name;
+            this.weight = weight;
+        
+        }
         public virtual void printValues() //virtual - виртуальный метод, те можем переписать функционал в наследнике
         {
             System.Console.WriteLine(name + "  " + weight + "  ");

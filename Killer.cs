@@ -3,10 +3,18 @@ using System;
 
 namespace project
 {
+
+//перечисления можно и в отдельных классах
+    enum Type {Enemy,Hero,Traitor}
+
+
+
     class Killer : Robot { // : - НАСЛЕДОВАНИЕ от робота  
     //имеем доступы ко всем полям аксессорам конструкторам  паблик и протектед
         
         public int Health {get; set;}
+
+        public Type type;
 
         public void Lazer(){
             System.Console.WriteLine("Laser shooting ");
@@ -14,9 +22,10 @@ namespace project
             this.surname = "Фамилия"; // проверка протектед
         }
 
-        public Killer(string name, int weight, byte[] coordinates, int health): base(name,weight,coordinates){
+        public Killer(string name, int weight, byte[] coordinates, int health, Type type): base(name,weight,coordinates){
             // : base - обращение к класссу родителю и они там переданы в конструктор который подходит по этим параметрам
             this.Health = health;
+            this.type = type;
             base.printValues();
         }
 

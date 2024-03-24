@@ -42,7 +42,7 @@ namespace project
             System.Console.WriteLine("robot.Weight is " + robot.Weight); // те с весом не связанно
 
 
-            Killer killer = new Killer("Killer", 4500, new byte[] { 0, 1, 1 }, 100);
+            Killer killer = new Killer("Killer", 4500, new byte[] { 0, 1, 1 }, 100,Type.Traitor);
             //killer.setValues("Killer", 4500, new byte[] { 0, 1, 1 });
             killer.printValues();
             //killer.Health = 1000;
@@ -70,10 +70,10 @@ namespace project
 
             //оператор as - обрабатываем обьект как обьект другого класса
             List<Killer> robotsKill = new List<Killer>();
-            robotsKill.Add(new Killer("Alex", 400, new byte[] { 0, 1, 1 }, 200));
-            robotsKill.Add(new Killer("Bob", 400, new byte[] { 0, 1, 1 }, 300));
-            robotsKill.Add(new Killer("Dad", 400, new byte[] { 0, 1, 1 }, 400));
-            robotsKill.Add(new Killer("Alexyi", 400, new byte[] { 0, 1, 1 }, 300));
+            robotsKill.Add(new Killer("Alex", 400, new byte[] { 0, 1, 1 }, 200,Type.Hero));
+            robotsKill.Add(new Killer("Bob", 400, new byte[] { 0, 1, 1 }, 300,Type.Enemy));
+            robotsKill.Add(new Killer("Dad", 400, new byte[] { 0, 1, 1 }, 400,Type.Traitor));
+            robotsKill.Add(new Killer("Alexyi", 400, new byte[] { 0, 1, 1 }, 300,Type.Traitor));
 
             //хотим обрабатывать обьект с именем "Alex" как обьект класса robot
             //можем сделать тк robot - родитель robotsKill
@@ -101,9 +101,57 @@ namespace project
             robot.printValues();
 
 
-
+            System.Console.WriteLine();
+            System.Console.WriteLine("абстрактные классы наследование только от одного ");
             //абстрактные классы - интерфейсы
-            Bot botA = new Bot("Bot",800, new byte[] { 0, 1, 1 });
+            Bot botA = new Bot("Bot", 800, new byte[] { 0, 1, 1 });
+            botA.Weight = -100;
+            botA.printValues();
+
+
+
+            //Интерфейсы можно реализовывать несколько интерфейсоф
+            System.Console.WriteLine("");
+
+
+
+
+
+
+
+            //перегрузка методов(или функций) - методы с разным кол вом принемаемых параметров 
+            //конструкторы - это как пример этого
+            System.Console.WriteLine();
+            Multiply(3,5);
+            Multiply(3.3f,5.6f);
+            Multiply(3,5,4);
+
+
+
+
+
+
+
+            //структуры
+            System.Console.WriteLine();
+            System.Console.WriteLine("структуры");
+            Book idiot = new Book();
+            idiot.setValues("Идиот", "Достоеевский");
+            idiot.printValues();
+        }
+
+        public static void Multiply(int a, int b){
+            int res = a*b;
+            System.Console.WriteLine("Res "+ res);
+        }
+
+         public static void Multiply(float a, float b){
+            float res = a*b;
+            System.Console.WriteLine("Res "+ res);
+        }
+        public static void Multiply(int a, int b,int c){
+            int res = a*b*c;
+            System.Console.WriteLine("Res "+ res);
         }
     }
 }

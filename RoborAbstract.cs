@@ -3,7 +3,7 @@ using System.Runtime.InteropServices.Marshalling;
 
 namespace project
 {
-    abstract class RobotAbstract  //абстрактный класс - как интерфейс
+    abstract class RobotAbstract: IRun, IJump  //абстрактный класс - есть реализация некоторых методов
     {
 
         private string name;
@@ -15,13 +15,13 @@ namespace project
         protected string surname;
 
 
-        
-        public Robot()
+
+        public RobotAbstract()
         {
             System.Console.WriteLine("Object has been created");
-        } 
+        }
 
-        public Robot(string name_, int weight_, byte[] coordinates_)
+        public RobotAbstract(string name_, int weight_, byte[] coordinates_)
         {
             System.Console.WriteLine("Object has been created");
             this.setValues(name_, weight_, coordinates_);
@@ -32,21 +32,26 @@ namespace project
             this.name = name;
             this.weight = weight;
             this.coordinates = coordinates;
-            
-        }
-        public virtual void printValues()
-        {
-            System.Console.WriteLine(name + "  " + weight + "  ");
-            foreach (byte el in coordinates)
-                System.Console.WriteLine(el);
 
         }
+        public abstract void printValues();
+
 
 
         public static void Print()
         { //this не юзаем в сатич методах и полях
             System.Console.WriteLine("hiiii" + count);
 
+        }
+
+        public void RobotRun()
+        {
+           System.Console.WriteLine("Robot is now ranning ");
+        }
+
+        public void Jump()
+        {
+            System.Console.WriteLine("Robot is now jumping ");
         }
 
         // Аксессоры «get» и «set»
@@ -66,7 +71,7 @@ namespace project
         }
 
         //аксессор сам по себе - как обычное поле по сути
-        public int Width {get; set; }
+        public int Width { get; set; }
         // public int Width { private get; set; }
 
         public string Name
@@ -77,9 +82,25 @@ namespace project
             }
             set
             {
-                
-               this.name = value;
+
+                this.name = value;
             }
         }
+
+        public byte[] Coordinates
+        {
+            get
+            {
+                return this.coordinates;
+            }
+            set
+            {
+
+                this.coordinates = value;
+            }
+        }
+
+        public float speed { get; set; }
+        public float y { get; set; }
     }
 }
